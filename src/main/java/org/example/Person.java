@@ -14,4 +14,9 @@ public class Person {
     public void displayDetails(){
         System.out.println(name+ " " + age + " " + occupation);
     }
+
+    public void birthday(){
+        System.out.println("Happy Birthday!");
+        this.age = this.age + 1;
+    }
 }

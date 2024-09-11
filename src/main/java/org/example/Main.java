@@ -8,5 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Person ruthvik = new Person("Ruthvik", 24, "Student");
         ruthvik.displayDetails();
+
+        ruthvik.birthday();
+        ruthvik.displayDetails();
     }
 }

@@ -6,28 +6,14 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Util util = new Util();
-        System.out.println("Even or odd: ");
-        System.out.println("Enter a number");
+        int[] numbers = {10, 11, 1, 2, 3};
+        int high = -1000, low = 1000;
+        for(int i: numbers){
+            high = Math.max(high, i);
+            low = Math.min(low, i);
+        }
 
-
-
-        //using scanner class
-        Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-
-        boolean result = util.checkEven(x);
-        if(result)
-            System.out.println("The number is even");
-        else
-            System.out.println("The number is odd");
-
-        System.out.println("Enter a number to find fibonacci");
-        x = scanner.nextInt();
-
-        System.out.println("Printing Pattern");
-
-        util.fibonacci(x);
-
+        System.out.println("The highest number is: "+ high);
+        System.out.println("The lowest number is: "+ low);
     }
 }

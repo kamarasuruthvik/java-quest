@@ -6,10 +6,10 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Person ruthvik = new Person("Ruthvik", 24, "Student");
-        ruthvik.displayDetails();
+        Animal dog = new Dog();
+        Animal cat = new Cat();
 
-        ruthvik.birthday();
-        ruthvik.displayDetails();
+        dog.speak();
+        cat.speak();
     }
 }

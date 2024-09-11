@@ -1,17 +1,33 @@
 package org.example;
 
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        int number1 = 2;
-        int number2 = 4;
-        char letter = 'c';
-        String word = "Hello";
-        double decimalNumber = 45.8;
+        Util util = new Util();
+        System.out.println("Even or odd: ");
+        System.out.println("Enter a number");
 
-        int z = number1 + number2;
-        System.out.print(z);
+
+
+        //using scanner class
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+
+        boolean result = util.checkEven(x);
+        if(result)
+            System.out.println("The number is even");
+        else
+            System.out.println("The number is odd");
+
+        System.out.println("Enter a number to find fibonacci");
+        x = scanner.nextInt();
+
+        System.out.println("Printing Pattern");
+
+        util.fibonacci(x);
+
     }
 }

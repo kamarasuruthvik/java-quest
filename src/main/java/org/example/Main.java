@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.interfaces.Guitar;
 import org.example.interfaces.Piano;
+import org.example.interfaces.Instrument;
 import org.example.interfaces.Playable;
 import java.util.Scanner;
 
@@ -9,10 +10,12 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Playable g = new Guitar();
+        Instrument g = new Guitar();
+        g.tune();
         g.play();
 
-        Playable p = new Piano();
+        Instrument p = new Piano();
+        g.tune();
         p.play();
     }
 }

@@ -5,25 +5,14 @@ import org.example.interfaces.InvalidAgeException;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
-        int x, y;
-        Scanner scanner = new Scanner(System.in);
         try{
-            System.out.print("Enter the numerator: ");
-            int numerator = scanner.nextInt();
-            System.out.print("Enter the denominator: ");
-            int denominator = scanner.nextInt();
-
-            int result = numerator/ denominator;
-
-            System.out.println("This is the result: " + result);
-        } catch(ArithmeticException e){
-            System.out.println("Error: Cannot divide by zero");
-        } catch (Exception e){
-            System.out.println("Unexpected error occured! " + e.getMessage());
-        } finally {
-            scanner.close();
-            System.out.println("Program has ended!");
+            int age;
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the age: ");
+            age = scanner.nextInt();
+            validateAge(age);
+        } catch(InvalidAgeException e){
+            System.out.println(e.getMessage());
         }
     }
 

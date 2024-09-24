@@ -6,16 +6,18 @@ import java.util.Arrays;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+@FunctionalInterface
+interface MathOperation{
+    public int operate(int a, int b);
+}
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1,2,3,4));
-        arr.forEach((a)-> System.out.print(a+" "));
+        MathOperation add = (a, b) -> a+b ;
+        MathOperation subtract = (a, b) -> a-b;
+        MathOperation multiply = (a, b) -> a*b;
 
-        //after sorting
-        arr.sort((a,b)-> b-a);
-        System.out.println();
-        System.out.println(arr);
-
-
+        System.out.println("add: " + add.operate(3, 4));
+        System.out.println("subtract: " + subtract.operate(3, 4));
+        System.out.println("multiply: " + multiply.operate(3, 4));
     }
 };

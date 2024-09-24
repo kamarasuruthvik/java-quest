@@ -2,7 +2,7 @@ package org.example;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-class Example extends Thread{
+class Example implements Runnable{
     public int threadNum = 1;
 
      Example(int threadNum){
@@ -24,10 +24,9 @@ class Example extends Thread{
 
 public class Main {
     public static void main(String[] args) {
-        Example c1 = new Example(1), c2 = new Example(2);
-        c1.start();
-        c2.start();
-
+        Thread t1 = new Thread(new Example(1)), t2 = new Thread(new Example(2));
+        t1.start();
+        t2.start();
         System.out.println("Threads finished execution");
 
     }

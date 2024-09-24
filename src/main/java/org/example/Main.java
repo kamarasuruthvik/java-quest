@@ -2,32 +2,47 @@ package org.example;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-class Example implements Runnable{
-    public int threadNum = 1;
+class Counter
+{
+    int count;
 
-     Example(int threadNum){
-        this.threadNum = threadNum;
+    public void increment(){
+        count++;
     }
 
-    public void run(){
-        System.out.println("Thread" + threadNum + "is running");
-        for(int i=0; i<5; i++){
-            try{
-                System.out.println(threadNum+ ": " + i);
-                Thread.sleep(500);
-            } catch (Exception e){
-                System.out.println(threadNum + "raised exception "+ e.getMessage());
-            }
-        }
-    }
 }
-
 public class Main {
     public static void main(String[] args) {
-        Thread t1 = new Thread(new Example(1)), t2 = new Thread(new Example(2));
-        t1.start();
-        t2.start();
-        System.out.println("Threads finished execution");
+        Counter c = new Counter();
 
+        try{
+            Thread t1= new Thread(new Runnable(){
+            public void run()
+                    {
+                        for(int i=1; i<=1000; i++){
+                            c.increment();
+                        }
+                    }
+            });
+
+            Thread t2= new Thread(new Runnable(){
+                public void run()
+                {
+                    for(int i=1; i<=1000; i++){
+                        c.increment();
+                    }
+                }
+            });
+
+            t1.start();
+            t2.start();
+
+            t1.join();
+            t2.join();
+
+        } catch (Exception e){
+            System.out.println("Throws error: "+ e.getMessage());
+        }
+        System.out.println("Count: "+ c.count);
     }
 }

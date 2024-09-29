@@ -1,11 +1,17 @@
 package org.example.Library;
 
-class Book {
+public class Book {
     String title;
     String author;
     String ISBN;
     Boolean availability;
 
+    public  Book(String title, String author, String ISBN){
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.availability = true;
+    }
 
     public void setTitle(String title) {
         this.title = title;

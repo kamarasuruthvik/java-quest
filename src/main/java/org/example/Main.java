@@ -3,6 +3,8 @@ package org.example;
 import org.example.Library.Library;
 
 import org.example.Library.Book;
+
+import java.util.List;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -44,13 +46,19 @@ public class Main {
                     isbn = scanner.nextLine();
                     library.removeBook(isbn);
                     break;
-
+                case 3:
+                    System.out.println("Enter a keyword: ");
+                    String keyword = scanner.nextLine();
+                    List<Book> matchingBooks = library.searchBooks(keyword);
+                    matchingBooks.forEach((b) -> System.out.print(b.getTitle() + ", "));
+                    System.out.println();
+                    break;
                 case 4:
                     System.out.println("Listing books... ");
                     library.listAllBooks();
                     break;
                 default:
-                    System.out.println("exiting application");
+                    System.out.println("exiting application...");
                     userInput = false;
                     break;
             }

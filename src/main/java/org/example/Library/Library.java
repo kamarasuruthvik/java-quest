@@ -35,7 +35,7 @@ public class Library {
 
     public void listAllBooks(){
         books.stream().forEach(book -> {
-            System.out.print("Title: "+ book.getTitle() +" @ " +" ISBN: " +book.getISBN());
+            System.out.print("\nTitle: "+ book.getTitle() +" @ " +" ISBN: " +book.getISBN());
         });
         System.out.println();
     }
